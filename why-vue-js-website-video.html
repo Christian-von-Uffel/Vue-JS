@@ -8,16 +8,35 @@
 </head>
 <body>
   <div id="app">
-    <h2>{{ product }} are in stock</h2>
+    <ul>
+      <!-- streamlined object-call syntax -->
+      <li v-for="product in products">
+        {{ product }}
+      </li>
+    </ul>
   </div>
 
+<!-- load Vue -->
 <script src="https://unpkg.com/vue"></script>
+
+<!-- create new Vue instance -->
 <script>
   const app = new Vue({
     el:'#app',
     data: {
-      product: 'Boots'
-    }
+      products: [
+        'shirts',
+        'jackets',
+        'all mighty warhammers'
+      ]
+    },
+    // created (){
+    //   fetch('http://api.myjson.com/bins/74l63')
+    //     .then(response => response.json())
+    //     .then(json => {
+    //       this.products = json.products
+    //     })
+    // }
   })
 </script>
 

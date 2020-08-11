@@ -1,0 +1,26 @@
+<!DOCTYPE <html>
+</html>
+<head>
+  <title>My first Vue app</title>
+  <script src="https://unpkg.com/vue"></script>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div id="app">
+    <h1>{{ message }}</h1>
+    <p>{{ note }}</p>
+    <p>{{ postscript}}</p>
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello Vue!',
+        note: "to show elements on your screen, simply index javascript objects by typing double curly brackets around  them like I did here to show you this message: {{ message }} and then format these objects normally like you would using regular HTML",
+        postscript: "Vue uses mustache notation to index objects and automatically refeshes the page on any change to these objects value"
+      }
+    })
+  </script>
+</body>
+</html>
