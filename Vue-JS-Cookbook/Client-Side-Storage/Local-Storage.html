@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue.js Local Storage</title>
+
+  <!-- to get started with Vue all you need is to load the script -->
+  <!-- this source is being loaded through a cdn which is faster and safer than the development version, but you could also load it locally -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+  <div id="app">
+    My name is <input v-model="name">
+  </div>
+
+<!-- here's an example of how local storage works in action -->
+<script>
+    <!-- simply initate your Vue like normal -->
+    const app = new Vue({
+    el: '#app',
+    data: {
+      <!-- initiate the data set and variable with an empty value to show up on display and store into -->
+      name: ''
+    },
+    <!-- setup Vue to load in the local storage value -->
+    mounted() {
+      if (localStorage.name) {
+        this.name = localStorage.name;
+      }
+    },
+    <!-- and then have Vue change the value within local storage whenever it changes -->
+    watch: {
+      name(newName) {
+        localStorage.name = newName;
+      }
+    }
+  });
+</script>
+</body>
+</html>
