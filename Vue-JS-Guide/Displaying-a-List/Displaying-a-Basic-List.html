@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue.js HTML Starter Template</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+  <ul id="example-1">
+  <!-- items create new list items, but only message data variables will be displayed -->
+  <li v-for="item in items" :key="item.message">
+    {{ item.message }}
+  </li>
+
+<script>
+  var example1 = new Vue({
+    el: '#example-1',
+    data: {
+      items: [
+        { message: 'Foo' },
+        { secret: 'Boo' },
+        { message: 'Bar' },
+        { secret: 'Far' },
+      ]
+    }
+  })
+</script>
+
+</body>
+</html>
