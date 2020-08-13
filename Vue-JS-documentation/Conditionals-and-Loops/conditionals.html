@@ -11,7 +11,7 @@
   <div id="app-3">
 
   <!-- Vue allows you to insert conditional statements directly into your HMTL element attributes so you can skip some scripting -->
-  <span v-if="seen">Now you see me</span>
+  <span v-if="seen">You will see this message if the value of seen == {{ seen }}, otherwise this whole message wouldn't even show up on your page </span>
 </div>
   <script>
     var app3 = new Vue({
