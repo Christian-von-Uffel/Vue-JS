@@ -187,9 +187,13 @@
             if (!value) {
               return;
             }
+            // add the to-do item to the dataset
             this.todos.push({
+              // create a unique id for the to-do
               id: todoStorage.uid++,
+              // save the value of the input as the to-do's title
               title: value,
+              // set an initial state for the to-do
               completed: false
             });
             this.newTodo = "";
