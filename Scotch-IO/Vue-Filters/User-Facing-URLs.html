@@ -1,0 +1,27 @@
+<!DOCTYPE <html>
+</html>
+<head>
+  <title>My first Vue app</title>
+  <script src="https://unpkg.com/vue"></script>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div id="app">
+    <h1>{{ url | BareURL }}</h1>
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        url: 'https://google.com'
+      },
+      filters: {
+    	  BareURL(value) {
+        	return value.replace(/[?].*/,"");
+        }
+    }
+    });
+  </script>
+</body>
+</html>
