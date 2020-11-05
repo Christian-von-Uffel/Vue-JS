@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>Vue Counter</title>
+</head>
+<body>
+
+    <div class="text-4xl font-black text-blue-500 text-center mt-12">
+        Simple Counter in Vue JS
+    </div>
+    <div class="max-w-lg mx-auto mt-6 text-lg font-medium whitespace-pre-line">The following is a simple counter that's been created using Vue.JS
+
+        Instead of using query selectors as we would inside of vanilla Javascript, we can simply apply a script that we bind to the button element using Vue's v-on:click directive property.
+
+        This enables us to avoid writing much of the logic that Javscript would require us to write and also enables us to build applications that scale more easily in development.
+    </div>
+
+    <!-- we can use both v-on: or more simply just an "@" prefix enable our click script -->
+    <!-- and yes, this will execute normal javascript ;) -->
+    <div class="max-w-sm mx-auto mt-20" id="app">
+        <button class="bg-red-500 text-white rounded shadow hover:shadow-lg transition duration-150 py-1 px-2 mb-4" v-on:click="counter += 1">Add 1</button>
+        <p class="text-lg font-medium">The button above has been clicked {{ counter }} times.</p>
+    </div>
+
+    <script>
+        var example1 = new Vue({
+            el: '#app',
+            data: {
+                counter: 0
+            }
+        })
+    </script>
+</body>
+</html>
