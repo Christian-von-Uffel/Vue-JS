@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue Math</title>
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    
+    <!-- Vue allows you to insert conditional statements directly into your HMTL element attributes so you can skip some scripting -->
+    <div class="max-w-2xl mx-auto text-lg font-medium py-4 px-8 mb-4 text-gray-800 bg-white shadow whitespace-pre-line sticky top-0">Vue's handlebar syntax is not only used to evaluate and render data,but can also be used to evaluate simple JavaScript expressions.
+        
+        For instance, you can calculate instead of compute properties.
+
+        <code class="bg-gray-700 text-base text-green-300 py-1 px-2 rounded-sm">{{ number1 }} times {{ number2 }} is {{ number1 * number2 }}</code>
+
+        You can also manipulate data using JavaScript.
+        
+        While the text rendered below looks like static content, you can actually change the data values that are used to compute it.
+        
+        Try changing the value of number1 or number 2 in your javascript console.
+        
+        <code class="bg-gray-700 text-base text-green-300 py-1 px-2 rounded-sm">vueApp.number1 = 20</code>
+        <code class="bg-gray-700 text-base text-green-300 py-1 px-2 rounded-sm">vueApp.number2 = 9</code>
+        
+    </div>
+    
+    <div id="math-app">
+        <div class="max-w-sm mx-auto text-3xl text-center font-black text-green-500 tracking-wider">
+            {{ number1 }} times {{ number2 }} is {{ number1 * number2 }}
+  </div>
+</div>
+  <script>
+    var vueApp = new Vue({
+      el: '#math-app',
+      data: {
+        number1: 12,
+        number2: 15
+      }
+    })
+  </script>
+</body>
+</html>
