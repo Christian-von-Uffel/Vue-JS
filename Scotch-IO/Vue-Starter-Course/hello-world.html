@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>Hello World!</title>
+</head>
+<body class="p-20">
+    <!-- standard HTML and JS combo -->
+    <!-- <h1 class="text-2xl font-bold text-gray-700 mb-2">
+        As you type into the input box below this text gets replaced by it
+    </h1>
+    <div class="flex justify-center">
+
+        <input class="border border-gray-300 shadow rounded px-4 py-1" type="text" placeholder="type some text here">
+    </div> -->
+
+    <div id="app">
+        <h1 class="text-2xl uppercase mb-4">
+            {{ text }}
+        </h1>
+
+        <input class="border border-gray-300 hover:border-blue-300 px-2 py-1 rounded shadow hover:shadow-lg transition duration-150" type="text" v-model="text">
+
+        <div class="mt-12 text-2xl text-center font-bold text-teal-600">
+            My name is {{ name }}, nice to meet you!
+        </div>
+
+    </div>
+
+    <script>
+
+        // // javascript
+        // // create variables for us to grab and assign values
+        // const heading = document.querySelector('h1');
+        // const input = document.querySelector('input');
+
+        // // listen for events
+        // input.addEventListener('keyup',(e)=> {
+        //     const text = e.target.value;
+        //     heading.innerText = text;
+        // })
+
+        const app = new Vue({
+            el: '#app',
+            data: {
+                text: "Hello!",
+                name: 'Christian' 
+            }
+        });
+    </script>
+</body>
+</html>
