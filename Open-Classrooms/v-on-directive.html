@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>V-on Directive</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Vue's v-on Directive Binds Scripts and Functions to HTML Elements Such as Buttons</h1>
+        <button v-on:click="showColor">Click me!</button>
+    </div>
+
+    <script>
+        // Vue is essentially a function which uses a JSON object as its parameters
+        const app = new Vue({
+            el: '#app',
+            data: {
+                buttonColor: 'red'
+            },
+            methods: {
+                showColor(){
+                    alert(this.buttonColor)
+                }
+            }
+        })
+    </script>
+</body>
+</html>
