@@ -7,9 +7,10 @@
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <title>Vue Templating Basics</title>
 </head>
-<body>
-    <div class="m-20">
-        This is a image that's being indexed from Twitter and who's data is being inferred in our image's source parameter using the v-bind operative because normally Vue doesn't insert data unless it is referenced specifically using double curly brackets
+<body class="bg-red-100">
+    <div class="max-w-2xl mx-auto text-xl font-medium py-8 px-10 mb-4 text-gray-800 bg-white shadow rounded-b whitespace-pre-line sticky top-0">The image below is being indexed from Twitter and uses the v-bind directive to create a dynamic HTML property value.
+
+        Page Deployment Status is dymically rendered based upon the boolean value of our Vue application's live variable. When you change the value of live equal to false, the page displays an alternate message, IE: <code class="bg-gray-700 text-base text-green-300 py-1 px-2 rounded-sm">app.live = true</code>
     </div>
     <div id="app">
         <div class="w-32 h-32 rounded-full overflow-hidden mx-auto mt-12 mb-8">
