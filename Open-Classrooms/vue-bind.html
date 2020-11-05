@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>Vue Bind</title>
+</head>
+<body>
+    <div id="app" class="bg-purple-100 h-screen">
+        <div class="max-w-2xl mx-auto text-lg font-medium py-8 px-10 mb-4 text-gray-800 bg-white shadow whitespace-pre-line leading-relaxed rounded-b sticky top-0">Vue uses special syntax to enable dynamic HTML element properties. Typing <code class="bg-gray-700 text-base text-green-300 py-1 px-2 rounded-sm">v-bind:</code> binds data form Vue to HTML properties that would normally be interpreted as static text. Here are some href links that have been dynamically created using the v-bind property.
+        </div>
+        <div class="max-w-lg mx-auto">
+            <div class="text-3xl text-center font-black text-purple-500 tracking-wider mt-12">
+                Dynamically Generated Links Using Vue's v-bind Directive
+            </div>
+            <ul class="mt-8 text-center">
+                <li v-for="item in apiResponse">
+                    <a v-bind:href="item.url" class="text-2xl font-medium text-purple-400 hover:underline">{{ item.name }}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        // Vue is essentially a function which uses a JSON object as its parameters
+        const app = new Vue({
+            el: '#app',
+            data: {
+                apiResponse: [
+                    { name: 'GitHub', url: 'https://www.github.com' },
+                    { name: 'Twitter', url: 'https://www.twitter.com' },
+                    { name: 'Netlify', url: 'https://www.netlify.com' }
+                ]
+            }
+        })
+    </script>
+</body>
+</html>
