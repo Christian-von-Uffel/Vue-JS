@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>Vue's v-model Directive</title>
+</head>
+<body>
+    <div id="app" class="max-w-xl mx-auto">
+        <div class="text-3xl font-black mt-12 mb-4 text-center tracking-wide">
+            James Bond Preferences
+        </div>
+        <div class="text-xl font-bold mt-10 mb-2">
+            My favorite Bond is {{ favoriteBondActor }} and it's not even close
+        </div>
+        <div class="flex grid grid-cols-2 items-center space-x-4">
+            
+            <div class="text-xl font-medium text-gray-900">
+                Update favorite Bond?
+            </div>
+            <input class="border shadow rounded py-2 px-3" type="text" v-model="favoriteBondActor">
+        </div>
+         
+        <div class="text-xl font-bold mt-10 mb-2">
+            My favorite Bond movie is {{ favoriteBondMovie }} without a doubt
+        </div>
+        <div class="flex grid grid-cols-2 items-center space-x-4">
+            <div class="text-xl font-medium text-gray-900">
+                Update favorite Bond movie?
+            </div>
+            <input class="border shadow rounded py-2 px-3" type="text" v-model="favoriteBondMovie">
+        </div>
+        <div class="text-xl font-bold mt-10 mb-2">
+            My favorite villain is {{ favoriteBondVillain }}
+        </div>
+        <div class="flex grid grid-cols-2 items-center space-x-4">
+            <div class="text-xl font-medium text-gray-900">
+                Update favorite Bond villain?
+            </div>
+            <input class="border shadow rounded py-2 px-3" type="text" v-model="favoriteBondVillain">
+        </div>
+        <div class="text-xl font-bold mt-10 mb-2">
+            My favorite Bond girl is definitely {{ favoriteBondGirl }} of course
+        </div>
+        <div class="flex grid grid-cols-2 items-center space-x-4">
+            <div class="text-xl font-medium text-gray-900">
+                Update favorite Bond girl?
+            </div>
+            <input class="border shadow rounded py-2 px-3" type="text" v-model="favoriteBondGirl">
+        </div>
+    </div>
+    <script>
+        const app = new Vue({
+            el: "#app",
+            data: {
+                favoriteBondActor: "Sean Connery",
+                favoriteBondVillain: "The Man with the Golden Gun",
+                favoriteBondGirl: "Eva Green",
+                favoriteBondMovie: "Goldfinger"
+            }
+        })
+    </script>
+</body>
+</html>
