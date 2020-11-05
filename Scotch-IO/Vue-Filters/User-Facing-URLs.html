@@ -1,12 +1,29 @@
 <!DOCTYPE <html>
 </html>
 <head>
-  <title>My first Vue app</title>
+  <title>User Facing URLs</title>
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
   <script src="https://unpkg.com/vue"></script>
   <link rel="stylesheet" href="main.css">
 </head>
-<body>
-  <div id="app">
+<body class="max-w-3xl mx-auto">
+
+  <div class="max-w-2xl mx-auto text-xl font-medium py-4 px-8 mb-4 text-gray-800 bg-white shadow whitespace-pre-line sticky top-0">
+    If you'd like to clean up data before you show it users, but still save the data in it's original format. You can do so using Vue's filter property.
+
+    In the example below I'm referencing one single piece of data, a URL that has a tracking parameter. But we don't want to show this URL tracking parameter to users, so to clean it up, we've created a regex function and then connected it to our filter which we've named BareURL. 
+
+    This filter removes any characters including and that then follow the question mark sign.
+  </div>
+  
+  <div id="app" >
+    <div class="text-xl font-medium mt-4">
+      URL without applying a filter
+    </div>
+    <h1>{{ url }}</h1>
+    <div class="text-xl font-medium mt-4">
+      URL with applying a filter
+    </div>
     <h1>{{ url | BareURL }}</h1>
   </div>
 
@@ -14,7 +31,7 @@
     var app = new Vue({
       el: '#app',
       data: {
-        url: 'https://google.com'
+        url: 'https://google.com/?this-is-a-url-parameter'
       },
       filters: {
     	  BareURL(value) {
