@@ -9,49 +9,50 @@
   </head>
   <body class="bg-orange-100">
     <div id="app" class="max-w-2xl mx-auto">
-        <div class="sticky fixed top-0 right-0 bg-white max-w-sm rounded shadow py-8 px-12 text-lg font-bold text-orange-600">Shopping Cart: {{ shoppingCart }} items</div>
-      <h1 class="text-3xl text-center mt-20 mb-4 font-black text-orange-600">{{ restaurantName }}</h1>
-      <p class="text-lg">
-        Welcome to {{ restaurantName }}! We are known for our freshly baked
-        bread and french pastries! Give you morning a warm start or treat
-        yourself in the middle of the day. Our butter is imported from local
-        farmers in France. Once you take your first bite, you will see why
-        everyone can't get enough!
-      </p>
-
-      <section class="">
-        <h2 class="text-2xl font-bold mt-12 text-orange-500">Menu</h2>
-        <div class="my-12" v-for="item in simpleMenu">
-          <img
+        <div class="sticky fixed top-0 transform translate-x-full bg-white max-w-sm rounded shadow py-8 px-12 text-lg font-bold text-orange-600">Shopping Cart: {{ shoppingCart }} items</div>
+        
+        <h1 class="text-3xl text-center mt-20 mb-4 font-black text-orange-600">{{ restaurantName }}</h1>
+        <p class="text-lg">
+          Welcome to {{ restaurantName }}! We are known for our freshly baked
+          bread and french pastries! Give you morning a warm start or treat
+          yourself in the middle of the day. Our butter is imported from local
+          farmers in France. Once you take your first bite, you will see why
+          everyone can't get enough!
+        </p>
+        
+        <section class="">
+          <h2 class="text-2xl font-bold mt-12 text-orange-500">Menu</h2>
+          <div class="my-12" v-for="item in simpleMenu">
+            <img
             class="shadow rounded overflow-hidden"
             :src="item.image.source"
             :alt="item.image.alt"
-          />
-          <div class="my-4 space-x-4">
-            <h3 class="text-lg font-medium">{{ item.name}}</h3>
-            <p> ${{item.price}}</p>
-            <p v-if="item.inStock">In Stock</p>
-            <p v-else>Out of Stock</p>
-            <div class="flex items-center space-x-8">
+            />
+            <div class="my-4 space-x-4">
+              <h3 class="text-lg font-medium">{{ item.name}}</h3>
+              <p> ${{item.price}}</p>
+              <p v-if="item.inStock">In Stock</p>
+              <p v-else>Out of Stock</p>
+              <div class="flex items-center space-x-8">
                 <label for="add-item-quantity">
-                    Quantity: {{ item.quantity }}
+                  Quantity: {{ item.quantity }}
                 </label>
                 <input 
-                    class="border px-2 py-1 rounded"
-                    v-model.number="item.quantity"
-                    type="number" />
+                class="border px-2 py-1 rounded"
+                v-model.number="item.quantity"
+                type="number" />
                 <button 
-                    class="bg-orange-500 text-white py-2 px-3 rounded-lg shadow hover:shadow-lg transition duration-150"
-                    v-on:click="addToShoppingCart(item.quantity)">
-                    Add to Shopping Cart
-                </button>
+                class="bg-orange-500 text-white py-2 px-3 rounded-lg shadow hover:shadow-lg transition duration-150"
+                v-on:click="addToShoppingCart(item.quantity)">
+                Add to Shopping Cart
+              </button>
             </div>
           </div>
         </div>
       </section>
       
       
-
+      
       <h2 class="text-xl font-bold mt-6">Contact Us</h2>
       <p>Address: {{ address }}</p>
       <p>Phone: {{ phone }}</p>
@@ -62,12 +63,12 @@
         <li>Saturday: 07:00 to 14:00</li>
         <li>Sunday: 07:00 to 12:00</li>
       </ul>
-
+      
       <footer class="mt-12 mb-8 text-center text-sm font-semibold">
         <p>{{ copyright }}</p>
       </footer>
     </div>
-
+    
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
       const app = new Vue({
