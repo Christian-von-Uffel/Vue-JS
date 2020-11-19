@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>Vue Templating</title>
+</head>
+<body>
+
+    <div id="app">
+        <div class="max-w-2xl mx-auto text-xl font-medium py-4 px-8 mb-4 text-gray-800 bg-white shadow rounded-b whitespace-pre-line sticky top-0" v-on>Here's a list that's being rendered using Vue. 
+            
+            All the data you see below is dynamically created using it. Text, images, and even the alt image tags are fetched and rendered from a JSON object that's dynamically being rendered using Vue.
+        </div>
+
+        <div class="text-3xl text-purple-600 font-black text-center mt-12">
+            Users List
+        </div>
+        <ul class="mb-20">
+            <div class="max-w-md mx-auto text-xl text-gray-600 font-medium my-8 flex items-center space-x-8" v-for="user in users">
+                <div class="w-32 h-32 rounded-full overflow-hidden">
+                    <img class="mx-auto mb-4" v-bind:src="user.avatar" v-bind:alt="user.name">
+                </div>
+                <div class="">
+                    Name: {{ user.name }} <br>
+                    Username: {{ user.username }} <br>
+                    Hometown: {{ user.hometown }} <br>
+                </div>
+            </div>
+        </ul>
+    </div>
+
+    <script>
+
+        const users = [
+            {
+                name: "Christian",
+                username: "Christian Uffel",
+                hometown: "Huntington, NY",
+                avatar: "https://pbs.twimg.com/profile_images/1302283957560659971/s1nag547_400x400.jpg"
+            },
+            {
+                name: "Wrath Of Gnon",
+                username: "wrathofgnon",
+                hometown: "Unknown",
+                avatar: "https://pbs.twimg.com/profile_images/939424471353475072/fB-3BRin_400x400.jpg"
+            },
+            {
+                name: "Patrick McKenzie",
+                username: "patio11",
+                hometown: "Tokyo, Japan",
+                avatar: "https://pbs.twimg.com/profile_images/476049306072276993/s9QMnPC5_400x400.jpeg"
+            },
+        ]
+
+        const app = new Vue({
+            el: "#app",
+            data: {
+                users: users
+            }
+        });
+    </script>
+</body>
+</html>

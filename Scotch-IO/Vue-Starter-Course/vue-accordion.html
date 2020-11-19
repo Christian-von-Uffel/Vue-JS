@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>Vue Event Basics</title>
+</head>
+<body class="max-w-3xl mx-auto">
+
+    <div class="text-3xl font-black text-orange-500 mt-12 mb-8">
+        Vue Event Functionality Shown Using an Accordion
+    </div>
+    <div id="app" class="border rounded overflow-hidden shadow max-w-lg mx-auto">
+
+
+        <div class="bg-blue-700 hover:bg-blue-600 transition duration-150 text-lg text-white p-4 flex justify-between cursor-pointer hoever" v-on:click="toggleAccordion">
+            Heading
+            <div v-on:click="toggleAccordion">^</div>
+        </div>
+        <div class="p-4" v-if="accordionOpen">
+            Details. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nihil neque optio, saepe vero accusamus quod culpa alias quasi. Dicta ea nostrum sapiente fuga quos magnam veniam eaque veritatis eligendi?Sunt, culpa doloremque! Corporis, expedita, vero dolorem voluptatem accusantium, dolore inventore molestias dicta consequuntur veniam porro dignissimos maxime in itaque. Error nemo blanditiis quae nam eius, reprehenderit esse! Explicabo, porro?
+        </div>
+    </div>
+        
+        <script>
+        const app = new Vue({
+            el= "#app",
+            data = {
+                accordionOpen: true
+            },
+            methods: {
+                toggleAccordion: function() {
+                    this.accordionOpen = !this.accordionOpen;
+                }
+            },
+            computed: function() {
+                return {
+                    'h-0': !this.isOpen,
+                    'is-primary': this.isOpen,
+                }
+            }
+        });
+    </script>
+</body>
+</html>
