@@ -2,6 +2,7 @@ const app = new Vue({
   el: "#events",
   data:{
       counter: 0,
+      name: "",
   },
   methods:{
     add(){
@@ -9,6 +10,9 @@ const app = new Vue({
     },
     subtract(){
       this.counter = this.counter - 1;
+    },
+    setName(event){
+      this.name = event.target.value;
     },
   }
 });
