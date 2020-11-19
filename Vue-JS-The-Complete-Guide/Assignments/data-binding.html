@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time to Practice Data Binding</title>
+</head>
+<body>
+    <div id="app">
+        <div>Hi there! My name is {{name}}</div>
+        <div> I'm {{age}} years old</div>
+        <div>And in 5 years I'll be {{age + 5}} which makes me a little anxious</div>
+        <div>
+            My favorite number is: {{ randomNumber()}}    
+        </div>
+        <div>
+            Hopefully in 5 years I'll be this fancy:
+        </div>
+        <img v-bind:src="image.source" v-bind:alt="image.title">
+        <input type="text" v-bind:value="name">
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data:{
+            name: "Christian",
+            age: 34,
+            image: {
+
+                source: "https://media0.giphy.com/media/VJScpfdeSNwuPdCL0W/200.gif",
+                title: "fancy parrot"
+            }
+        },
+        methods:{
+            randomNumber(){
+                return Math.round(Math.random()*10);
+            }
+        }
+    })
+</script>
+</html>
