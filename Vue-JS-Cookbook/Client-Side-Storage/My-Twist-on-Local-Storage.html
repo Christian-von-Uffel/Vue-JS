@@ -5,16 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Vue.js Local Storage</title>
-  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-  <!-- to get started with Vue all you need is to load Vue's script -->
+
+  <!-- to get started with Vue all you need is to load the script -->
   <!-- this source is being loaded through a cdn which is faster and safer than the development version, but you could also load it locally -->
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 <body>
-  <!-- create the div that Vue will popular the attributes into -->
-  <div id="app" class="max-w-xl mt-24 mx-auto">
-    My name is <input class="border rounded shadow border-gray-300" placeholder="type your name here" v-model="name">
-    {{ name }}
+  <div id="app">
+    My name is <input v-model="name">
   </div>
 
 <!-- here's an example of how local storage works in action -->

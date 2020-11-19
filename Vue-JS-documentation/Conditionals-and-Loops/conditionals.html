@@ -4,14 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Vue Conditionals</title>
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 <body>
   <div id="app-3">
 
   <!-- Vue allows you to insert conditional statements directly into your HMTL element attributes so you can skip some scripting -->
-  <span v-if="seen">You will see this message if the value of seen == {{ seen }}, otherwise this whole message wouldn't even show up on your page </span>
+  <div v-if="seen" class="max-w-2xl mx-auto text-xl font-medium py-4 px-8 mb-4 text-gray-800 bg-white shadow whitespace-pre-line sticky top-0">You will see this message if the value of seen == {{ seen }}, otherwise this whole message wouldn't even show up on your page.
+
+    To test this functionality out you can open up your browser's javascript console and type in <code class="bg-gray-700 text-green-500 rounded-sm px-2 py-1 text-lg mx-2">app-3.seen = false</code> 
+      and this message will disappear
+  </div>
 </div>
   <script>
     var app3 = new Vue({
