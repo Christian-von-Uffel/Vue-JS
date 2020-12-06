@@ -17,20 +17,20 @@
 
 <!-- here's an example of how local storage works in action -->
 <script>
-    <!-- simply initate your Vue like normal -->
+    // simply initate your Vue like normal
     const app = new Vue({
     el: '#app',
     data: {
-      <!-- initiate the data set and variable with an empty value to show up on display and store into -->
+      // initiate the data set and variable with an empty value to show up on display and store into
       name: ''
     },
-    <!-- setup Vue to load in the local storage value -->
+    // setup Vue to load in the local storage value
     mounted() {
       if (localStorage.name) {
         this.name = localStorage.name;
       }
     },
-    <!-- and then have Vue change the value within local storage whenever it changes -->
+    // and then have Vue change the value within local storage whenever it changes
     watch: {
       name(newName) {
         localStorage.name = newName;

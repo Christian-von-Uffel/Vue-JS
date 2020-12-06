@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>Vue Todo App</title>
+</head>
+<body class="max-w-xl mx-auto">
+
+    <div class="mt-24 mb-8 text-4xl font-black text-red-400 text-center">
+        Todo List
+    </div>
+
+    <input class="border border-gray-300 rounded shadow w-full text-lg py-1 px-4" placeholder="type new tasks here and press enter to save" v-model="newTodo" type="text">
+
+    <div class="text-xl font-medium" v-for="todo in todos" :key="todo.id">
+        {{ title }}
+    </div>
+
+    <script>
+        const app = new Vue({
+            el= "#app",
+            data = [
+                {
+                    id: 0,
+                    title: "get the list to render properly",
+                    completed: false
+                },
+                {
+                    id: 1,
+                    title: "enable adding new todos",
+                    completed: false
+                },
+                {
+                    id: 2,
+                    title: "enable task removals",
+                    completed: false
+                },
+                {
+                    id: 3,
+                    title: "enable task editing",
+                    completed: false
+                },
+            ],
+            methods: []
+        })
+    </script>
+</body>
+</html>
