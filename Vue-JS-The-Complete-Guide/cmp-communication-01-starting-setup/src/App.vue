@@ -4,8 +4,17 @@
       <h1>My Friends</h1>
     </header>
     <ul>
-      <friend-contact></friend-contact>
-      <friend-contact></friend-contact>
+      <friend-contact
+        v-for="friend in friends"
+        :key="friend.id"
+        :name="friend.name"
+        :phone-number="friend.phone"
+        :email-address="friend.email"
+      ></friend-contact>
+      <!-- <friend-contact name="Peter" phone-number="555-1234" email-address="peter@gmail.com"></friend-contact>
+      <friend-contact name="Paul" phone-number="555-1234" email-address="paul@gmail.com"></friend-contact>
+      <friend-contact name="Luke" phone-number="555-1234" email-address="luke@gmail.com"></friend-contact>
+      <friend-contact name="John" phone-number="555-1234" email-address="john@gmail.com"></friend-contact> -->
     </ul>
   </section>
 </template>
@@ -48,7 +57,7 @@ header {
   margin: 3rem auto;
   border-radius: 10px;
   padding: 1rem;
-  background-color: #58004d;
+  background-color: #4eb7ce;
   color: white;
   text-align: center;
   width: 90%;
@@ -71,16 +80,17 @@ header {
 #app h2 {
   font-size: 2rem;
   border-bottom: 4px solid #ccc;
-  color: #58004d;
+  color: #4096a9;
   margin: 0 0 1rem 0;
 }
 #app button {
   font: inherit;
   cursor: pointer;
+  border-radius: 3px;
   border: 1px solid #ff0077;
   background-color: #ff0077;
   color: white;
-  padding: 0.05rem 1rem;
+  padding: 0.5rem 1rem;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.26);
 }
 #app button:hover,
